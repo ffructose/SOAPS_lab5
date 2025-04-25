@@ -7,6 +7,8 @@ import (
 
 func main() {
 
+	InitDB()
+
 	mux := routes()
 	log.Println("Starting authentication service on port 8081...")
 	err := http.ListenAndServe(":8081", mux)

@@ -16,5 +16,10 @@ func routes() http.Handler {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/login", LoginHandler)
 	mux.HandleFunc("/verify", VerifyHandler)
+
+	mux.HandleFunc("/register", RegisterHandler)
+
+	mux.HandleFunc("/refresh", RefreshHandler)
+
 	return loggingMiddleware(mux)
 }
